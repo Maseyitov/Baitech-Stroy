@@ -1,0 +1,46 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+  min-height: 24rem;
+  color: #fff;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 0.9s ease, transform 5s ease;
+
+  &.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.footer {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 3rem 1.5rem 1.25rem;
+  background: linear-gradient(to top, rgba(11, 31, 58, 0.85), transparent);
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 9999px;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #19a974;
+    border-color: #19a974;
+  }
+}
