@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { COMPANY, FOOTER_LEFT, FOOTER_RIGHT, SOCIALS } from '@/constants'
+import { CATALOG_PATH, COMPANY, FOOTER_LEFT, FOOTER_RIGHT, SOCIALS } from '@/constants'
 import Logo from '@/components/ui/Logo'
 import Reveal from '@/components/motion/Reveal'
 
@@ -21,7 +21,7 @@ export default function Footer() {
           <a href={`mailto:${COMPANY.email}`} className={`${linkCls} mt-4`}>{COMPANY.email}</a>
           <a href={COMPANY.phoneHref} className="font-display text-lg font-normal hover:text-green">{COMPANY.phone}</a>
           <Link
-            to="/projects"
+            to={CATALOG_PATH}
             className="mt-2 rounded-full border border-white/60 px-10 py-2.5 text-[12px] font-medium transition hover:bg-white hover:text-navy"
           >
             Выбрать объект

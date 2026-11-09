@@ -1,4 +1,4 @@
-import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
+import { Outlet, ScrollRestoration, useLocation, useMatches } from "react-router-dom";
 import { motion } from "motion/react";
 import { EASE_OUT } from "@/lib/motion";
 import PageScope from "@/components/motion/PageScope";
@@ -8,6 +8,10 @@ import FloatingChat from "./FloatingChat";
 
 export default function Layout() {
   const { pathname } = useLocation();
+  // Маршрут может попросить скрыть футер: { handle: { hideFooter: true } }
+  const hideFooter = useMatches().some(
+    (m) => (m.handle as { hideFooter?: boolean } | undefined)?.hideFooter,
+  );
 
   return (
     <>
@@ -24,7 +28,7 @@ export default function Layout() {
           <Outlet />
         </PageScope>
       </motion.main>
-      <Footer />
+      {!hideFooter && <Footer />}
       <FloatingChat />
       <ScrollRestoration />
     </>
