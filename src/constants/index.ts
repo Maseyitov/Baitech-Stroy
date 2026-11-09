@@ -7,6 +7,9 @@ export const COMPANY = {
   legal: '© 2026 BAITECH STROY. Все права защищены.',
 }
 
+/** Страница подбора недвижимости (кнопки «Выбрать объект») */
+export const CATALOG_PATH = '/podbor'
+
 export const NAV_LINKS = [
   { to: '/about', label: 'О компании' },
   { to: '/projects', label: 'Проекты' },

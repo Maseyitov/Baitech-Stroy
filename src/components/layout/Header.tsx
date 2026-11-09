@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { SlidersHorizontal } from 'lucide-react'
 import { motion, useMotionValueEvent, useScroll } from 'motion/react'
-import { COMPANY } from '@/constants'
+import { CATALOG_PATH, COMPANY } from '@/constants'
 import { cn } from '@/lib/cn'
 import { EASE_OUT } from '@/lib/motion'
 import Logo from '@/components/ui/Logo'
@@ -58,7 +58,7 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-5 text-[13px] md:gap-10">
-            <Link to="/projects" className="hidden items-center gap-2 hover:text-green sm:flex">
+            <Link to={CATALOG_PATH} className="hidden items-center gap-2 hover:text-green sm:flex">
               Выбрать объект
               <SlidersHorizontal size={16} strokeWidth={1.25} aria-hidden="true" />
             </Link>
